@@ -47,9 +47,9 @@ It assumes you have two repos -
    - binary repo: required for private modules
 
 7. In source repo,
-  - ```
-    npx scatter-bin-upload
-    ```.
+      ```
+      npx scatter-bin-upload
+      ```
 
 When your binary modules execute `npm install binary-module`, the `scripts/post-install.js`
 will download, un-compress and create appropriate bin-links, with the platform specific
