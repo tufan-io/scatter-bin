@@ -41,7 +41,7 @@ It assumes you have two repos -
         }
       ```
 
-6. Create and configure GITHUB_TOKEN as appropriate 
+6. Create and [configure GITHUB_TOKEN](https://github.com/settings/tokens) as appropriate 
    - ```export GITHUB_TOKEN=xxx```
    - source repo: required for upload
    - binary repo: required for private modules
