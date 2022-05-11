@@ -25,7 +25,7 @@ It assumes you have two repos -
 4. Create a binary repo - which can appropriately invoke the binary
    - ensure this repo is available on github
    - `npm install --save-dev @scatter-bin/download`
-   - NOTE: this will create a file - `./scripts/post-install.js`
+   - NOTE: this will create a file - `./scripts/post-install.js`.
 5. Configure `scatter-bin` in binary modules package.json
   ```json
     "scatter-bin": {
