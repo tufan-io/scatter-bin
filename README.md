@@ -12,7 +12,9 @@ It assumes you have two repos -
 
 1. Create some source only npm/deno module
    - `npm install --save-dev @scatter-bin/upload`
+
 2. Create necessary binary packages with either `pkg` or `deno compile`
+
 3. Configure `scatter-bin` in source modules package.json
    ```json
     "scatter-bin": {
@@ -21,11 +23,13 @@ It assumes you have two repos -
       "binPath": "./bin",
       "variants": ["mac", "mac_m1", "win", "nix"]
     },
-  ```
+  ```.
+
 4. Create a binary repo - which can appropriately invoke the binary
    - ensure this repo is available on github
    - `npm install --save-dev @scatter-bin/download`
    - NOTE: this will create a file - `./scripts/post-install.js`.
+
 5. Configure `scatter-bin` in binary modules package.json
   ```json
     "scatter-bin": {
@@ -37,10 +41,12 @@ It assumes you have two repos -
       "postinstall": "./scripts/post-install.js"
     }
   ```
+
 6. Create and configure GITHUB_TOKEN as appropriate 
    - ```export GITHUB_TOKEN=xxx```
    - source repo: required for upload
    - binary repo: required for private modules
+
 7. In source repo,
   ```
   npx scatter-bin-upload
