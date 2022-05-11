@@ -16,14 +16,14 @@ It assumes you have two repos -
 2. Create necessary binary packages with either `pkg` or `deno compile`
 
 3. Configure `scatter-bin` in source modules package.json
-   ```json
-    "scatter-bin": {
-      "url": "https://github.com/{owner}/{repo}"
-      "private": false,
-      "binPath": "./bin",
-      "variants": ["mac", "mac_m1", "win", "nix"]
-    },
-  ```.
+   - ```json
+      "scatter-bin": {
+        "url": "https://github.com/{owner}/{repo}"
+        "private": false,
+        "binPath": "./bin",
+        "variants": ["mac", "mac_m1", "win", "nix"]
+      },
+    ```
 
 4. Create a binary repo - which can appropriately invoke the binary
    - ensure this repo is available on github
@@ -31,16 +31,16 @@ It assumes you have two repos -
    - NOTE: this will create a file - `./scripts/post-install.js`.
 
 5. Configure `scatter-bin` in binary modules package.json
-  ```json
-    "scatter-bin": {
-      "url": "https://github.com/{owner}/{repo}"
-      "private": false
-    },
-    "version": "{version}",
-    "scripts": {
-      "postinstall": "./scripts/post-install.js"
-    }
-  ```
+  - ```json
+      "scatter-bin": {
+        "url": "https://github.com/{owner}/{repo}"
+        "private": false
+      },
+      "version": "{version}",
+      "scripts": {
+        "postinstall": "./scripts/post-install.js"
+      }
+    ```.
 
 6. Create and configure GITHUB_TOKEN as appropriate 
    - ```export GITHUB_TOKEN=xxx```
@@ -48,9 +48,9 @@ It assumes you have two repos -
    - binary repo: required for private modules
 
 7. In source repo,
-  ```
-  npx scatter-bin-upload
-  ```
+  - ```
+    npx scatter-bin-upload
+    ```.
 
 When your binary modules execute `npm install binary-module`, the `scripts/post-install.js`
 will download, un-compress and create appropriate bin-links, with the platform specific
