@@ -53,6 +53,7 @@ It assumes you have two repos -
 
 When users of your binary module execute `npm install binary-module`, 
 `scripts/post-install.js` does these things:
+
 0. Auto detect platform
 1. Download platform appropriate (compressed) binary
 2. Un-compress the binary
