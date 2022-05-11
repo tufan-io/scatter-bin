@@ -51,9 +51,12 @@ It assumes you have two repos -
       npx scatter-bin-upload
       ```
 
-When your binary modules execute `npm install binary-module`, the `scripts/post-install.js`
-will download, un-compress and create appropriate bin-links, with the platform specific
-binary.
+When users of your binary module execute `npm install binary-module`, 
+`scripts/post-install.js` does these things:
+0. Auto detect platform
+1. Download platform appropriate (compressed) binary
+2. Un-compress the binary
+3. Create appropriate bin-links (just as npm would have done)
 
 ## Why do we need this?
 
