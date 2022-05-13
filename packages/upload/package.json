@@ -1,0 +1,41 @@
+{
+  "name": "@scatter-bin/upload",
+  "version": "0.0.1",
+  "description": "Uploads compressed tarballs to github release artifacts",
+  "main": "dist/index.js",
+  "bin": {
+    "scatter-bin-upload": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tufan-io/scatter-bin.git"
+  },
+  "keywords": [
+    "scatter-bin",
+    "binary",
+    "release",
+    "npm"
+  ],
+  "author": "sramam",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tufan-io/scatter-bin/issues"
+  },
+  "homepage": "https://github.com/tufan-io/scatter-bin#readme",
+  "dependencies": {
+    "@octokit/rest": "^18.12.0",
+    "chalk": "^5.0.1",
+    "tar": "^6.1.11",
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@types/tar": "^6.1.1",
+    "ts-node": "^10.7.0",
+    "tslib": "^2.4.0"
+  }
+}
