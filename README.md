@@ -46,7 +46,7 @@ It assumes you have two repos -
 
    - ensure this repo is available on github
    - `npm install --save-dev @scatter-bin/download`
-   - NOTE: this will create a file - `./scripts/post-install.js`.
+   - NOTE: this will create a file - `./scripts/post-install.cjs`.
 
 5. Configure `scatter-bin` in binary modules package.json
 
@@ -57,7 +57,7 @@ It assumes you have two repos -
      },
      "version": "{VERSION}",
      "scripts": {
-       "postinstall": "./scripts/post-install.js"
+       "postinstall": "./scripts/post-install.cjs"
      }
    ```
 
@@ -74,7 +74,7 @@ It assumes you have two repos -
    ```
 
 When users of your binary module execute `npm install binary-module`,
-`scripts/post-install.js` does these things:
+`scripts/post-install.cjs` does these things:
 
 1. Download platform appropriate (compressed) binary
 2. Un-compress the binary
@@ -143,7 +143,7 @@ to have been configured correctly
 ### `@scatter-bin/download`
 
 `@scatter-bin/download` is installed as a dev-dependency in the target binary repo.
-It installs a bundles (no-dependency) script as `scripts/post-install.js` and
+It installs a bundles (no-dependency) script as `scripts/post-install.cjs` and
 adds a `postinstall` run-script that invokes this script.
 
 #### Config (in binary repo)

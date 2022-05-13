@@ -18,12 +18,12 @@ export default async function postInstall(pkgDir: string) {
   // 0. Compute install parameters
   const inNodeModules = isNodeModules(name);
   const global = !!process.env.npm_config_global;
-  const devInstall = !global && !inNodeModules;
-  if (devInstall) {
-    throw new Error(
-      `${name}:binary-install: development mode installation. Skipping postinstall`
-    );
-  }
+  // const devInstall = !global && !inNodeModules;
+  // if (devInstall) {
+  //   throw new Error(
+  //     `${name}:binary-install: development mode installation. Skipping postinstall`
+  //   );
+  // }
   if (_private && !process.env.GITHUB_TOKEN) {
     throw new Error(
       `${name}:binary-install: missing env variable GITHUB_TOKEN, required for private modules`
