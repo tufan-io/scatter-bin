@@ -1,5 +1,13 @@
 # @scatter-bin
 
+> WARNING: 
+> This software is alpha level and very immature. 
+> While it does what is claims, nothing about it is guaranteed: 
+>  - not the APIs,
+>  - not the workings,
+>  - not the outcomes.
+
+
 scatter-bin helps distribute cross platform binaries via npm.
 
 It assumes that you have already created binaries via either [`pkg`](https://www.npmjs.com/package/pkg) or even [`deno compile`](https://deno.land/manual/tools/compiler).
