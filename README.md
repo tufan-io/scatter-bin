@@ -25,7 +25,7 @@ It assumes you have two repos -
 
 2. Create necessary binary packages with either `pkg` or `deno compile`
 
-   - 4 platforms are supported: `mac`, `mac_m1`, `win`, `nix"`
+   - 4 platforms are supported: `mac`, `mac_x86`, `win`, `nix`
    - Each platform gets an independent sub-directory
    - Each platforms sub-directory contains the directory tree
      relative to module root of destination.
@@ -37,7 +37,7 @@ It assumes you have two repos -
        "binaryRepo": "https://github.com/{OWNER}/{REPO}",
        "private": false,
        "binPath": "./bin",
-       "platforms": ["mac", "mac_m1", "win", "nix"]
+       "platforms": ["mac", "mac_x86", "win", "nix"]
      },
      "version": "{VERSION}",
    ```
@@ -104,8 +104,8 @@ Currently, `scatter-bin` only supports hosting the module on github.
 `scatter-bin` currently supports 4 platforms, represented as file/directory platforms.
 
 - `mac`
-- `mac_m1`
-- `exe`
+- `mac_x86`
+- `win`
 - `nix`
 
 Because we auto-detect the platform on download, these platforms are hard coded.
@@ -130,7 +130,7 @@ tarballs and uploading it to a github release in a specified repo.
     "url": "https://github.com/{owner}/{repo}"
     "private": false,
     "binPath": "./bin",
-    "platforms": ["mac", "mac_m1", "win", "nix"]
+    "platforms": ["mac", "mac_x86", "win", "nix"]
   },
   "version": "{version}"
 ```
