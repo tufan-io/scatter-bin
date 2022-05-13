@@ -1,10 +1,6 @@
 {
   "name": "scatter-bin",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "0.0.1",
   "workspaces": [
     "packages/download",
     "packages/upload"
@@ -12,5 +8,5 @@
   "keywords": [],
   "author": "sramam",
   "license": "ISC",
-  "description": ""
+  "description": "scatter-bin helps distribute cross platform binaries via npm"
 }

@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "Uploads compressed tarballs to github release artifacts",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "bin": {
     "scatter-bin-upload": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
