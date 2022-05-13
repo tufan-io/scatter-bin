@@ -254,7 +254,7 @@ exports.untar = function (arrayBuffer: ArrayBuffer, pkgRoot: string) {
 };
 
 function writeFile(uncompressedFile: any /* fileInfo */, pkgRoot: string) {
-  const { filename, /*mtime,*/ mode, uid, gid, fileData } = uncompressedFile;
+  const { filename, mode, /* mtime, uid, gid, */ fileData } = uncompressedFile;
   const fPath = `${pkgRoot}/${filename}`;
   fs.mkdirSync(path.dirname(fPath), { recursive: true });
   fs.writeFileSync(fPath, fileData);
@@ -265,6 +265,7 @@ function writeFile(uncompressedFile: any /* fileInfo */, pkgRoot: string) {
   // fs.utimesSync(fPath, stats.atime, mtime)
   // WARNING: DO NOT set file permissions.
   // Messing with this seems to cause trouble on ubuntu
-  // fs.chmodSync(fPath, 0o555); // parseInt(mode.trim()));
+  // https://nodejs.org/api/fs.html#fschmodpath-mode-callback
+  fs.chmodSync(fPath, mode.trim()); // parseInt(mode.trim()));
   return fPath;
 }
