@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as https from "https";
-import Url from "node:url";
+import Url from "url";
 // import rimraf from "rimraf";
 import zlib from "zlib";
 const { untar } = require("./untar");
