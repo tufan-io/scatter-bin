@@ -17,6 +17,7 @@
     "binary",
     "npm"
   ],
+  "private": false,
   "author": "sramam",
   "license": "MIT",
   "bugs": {

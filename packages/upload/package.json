@@ -23,6 +23,7 @@
     "npm"
   ],
   "author": "sramam",
+  "private": false,
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tufan-io/scatter-bin/issues"
