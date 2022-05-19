@@ -2,7 +2,9 @@
   "name": "@scatter-bin/download",
   "version": "0.0.1",
   "description": "Downloads, extracts and installs OS specific binaries for parent module",
-  
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && rollup -c rollup.config.js"
   },
@@ -16,7 +18,7 @@
     "npm"
   ],
   "author": "sramam",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tufan-io/scatter-bin/issues"
   },

@@ -7,7 +7,7 @@
   ],
   "keywords": [],
   "author": "sramam",
-  "license": "ISC",
+  "license": "MIT",
   "description": "scatter-bin helps distribute cross platform binaries via npm",
   "devDependencies": {
     "ts-node": "^10.7.0"
