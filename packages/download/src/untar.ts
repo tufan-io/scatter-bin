@@ -258,14 +258,16 @@ function writeFile(uncompressedFile: any /* fileInfo */, pkgRoot: string) {
   const fPath = `${pkgRoot}/${filename}`;
   fs.mkdirSync(path.dirname(fPath), { recursive: true });
   fs.writeFileSync(fPath, fileData);
-  // setting the times seems to mess up 'ls -l' on windows.
-  // It's not the biggest problem, so we'll just skip for now.
-  // But makes one wonder why this is really a problem.
-  // const stats = fs.statSync(fPath);
-  // fs.utimesSync(fPath, stats.atime, mtime)
-  // WARNING: DO NOT set file permissions.
-  // Messing with this seems to cause trouble on ubuntu
-  // https://nodejs.org/api/fs.html#fschmodpath-mode-callback
-  fs.chmodSync(fPath, mode.trim()); // parseInt(mode.trim()));
+  if (process.platform !== "win32") {
+    // setting the times seems to mess up 'ls -l' on windows.
+    // It's not the biggest problem, so we'll just skip for now.
+    // But makes one wonder why this is really a problem.
+    // const stats = fs.statSync(fPath);
+    // fs.utimesSync(fPath, stats.atime, mtime)
+    // WARNING: DO NOT set file permissions.
+    // Messing with this seems to cause trouble on ubuntu
+    // https://nodejs.org/api/fs.html#fschmodpath-mode-callback
+    fs.chmodSync(fPath, mode.trim()); // parseInt(mode.trim()));
+  }
   return fPath;
 }

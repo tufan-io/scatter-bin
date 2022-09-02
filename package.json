@@ -10,6 +10,10 @@
   "license": "MIT",
   "description": "scatter-bin helps distribute cross platform binaries via npm",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.74.1",
+    "rollup-plugin-add-shebang": "^0.3.1",
     "ts-node": "^10.7.0"
   }
 }

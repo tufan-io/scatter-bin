@@ -16,21 +16,20 @@ releases using scatter-bin.
   
     ```
       "scripts": {
-        "postversion": "build_bin && scatter-bin-release"  
+        "postversion": "build_bin && scatter-bin-release && scatter-bin-upload"  
       },
     ```
 
 ### `scatter-bin-release`:
-  - ensure no staged/unstaged changes
-  - tag source repo with version
-  - clone bin-repo
-  - fix package.json:version to match source repo
-  - commit package.json
-  - tag bin repo with version
-  - create release at version
-  - push changes to origin
-  - make release at version
-  - upload compressed binaries
-  - publish binary repo to npm
-
+  - ensure no staged/unstaged changes in src repo
+  - clone bin-repo to .tmp
+  - confirm version to release
+  - ensure this version is not current version of bin-repo
+  - set bin-repo version (change & commit)
+  - tag source-repo with version
+  - tag bin-repo with version
+  - push changes to origin (both src and bin repos)
+  - run scatter-bin-upload, which creates a release on the bin-repo
+  - publish the bin-repo to npm registry of choice
+  
 ... sip a Piña Colada and appreciate the beauty of this automation!

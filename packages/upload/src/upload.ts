@@ -122,15 +122,15 @@ function getGithub() {
 }
 
 // here for manual testing
-if (true) {
-  upload({
-    owner: "tufan-io",
-    repo: "noun-and-verb",
-    binRepo: "https://github.com/tufan-io/noun-and-verb",
-    binPath: "./bin",
-    private: true,
-    tmpDir: "./bin/.tmp",
-    version: "0.0.1-alpha",
-    platforms: ["mac", "mac_x86", "win", "nix"],
-  }).catch(console.error);
-}
+// if (false) {
+//   upload({
+//     owner: "tufan-io",
+//     repo: "noun-and-verb",
+//     binRepo: "https://github.com/tufan-io/noun-and-verb",
+//     binPath: "./bin",
+//     private: true,
+//     tmpDir: "./bin/.tmp",
+//     version: "0.0.1-alpha",
+//     platforms: ["mac", "mac_x86", "win", "nix"],
+//   }).catch(console.error);
+// }
